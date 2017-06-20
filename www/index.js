@@ -8,7 +8,6 @@ var azimsteppe_img;
 
 $(document).ready(function() {
 	init();
-	setTimeout(update, 100);
 
 	$('#add').click(function(){
 		add($("#name").val());
@@ -73,31 +72,37 @@ function init() {
 	if(!fringes_img) {
 		fringes_img = new Image();
 		fringes_img.src = "img/fringes.png";
+		fringes_img.onload = init;
 	}
 
 	if(!peaks_img) {
 		peaks_img = new Image();
 		peaks_img.src = "img/peaks.png";
+		peaks_img.onload = init;
 	}
 
 	if(!lochs_img) {
 		lochs_img = new Image();
 		lochs_img.src = "img/lochs.png";
+		lochs_img.onload = init;
 	}
 
 	if(!rubysea_img) {
 		rubysea_img = new Image();
 		rubysea_img.src = "img/ruby_sea.png";
+		rubysea_img.onload = init;
 	}
 
 	if(!yanxia_img) {
 		yanxia_img = new Image();
 		yanxia_img.src = "img/yanxia.png";
+		yanxia_img.onload = init;
 	}
 
 	if(!azimsteppe_img) {
 		azimsteppe_img = new Image();
 		azimsteppe_img.src = "img/azim_steppe.png";
+		azimsteppe_img.onload = init;
 	}
 
 	$('#MonsterVisibleList').empty();
