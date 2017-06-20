@@ -219,14 +219,31 @@ var MonsterDataArray =
 	},
 
 	{
+		name: 'クラッグクロウ',
+		area: 'Peaks',
+		pos: {x: 25.9 , y: 11.5},
+		visible:false
+	},
+
+	{
 		name: 'ディアッカ',
 		area: 'Fringes',
 		pos: {x: 11.1, y: 32.3},
 		visible:false
+	},
+
+	{
+		name: 'タラシナ',
+		area: 'Lochs',
+		pos: {x: 17.8, y: 25.4},
+		visible:false
+	},
+
+	{
+		name: 'ヴェパル',
+		area: 'Lochs',
+		pos: {x: 23.7, y: 28.7},
+		visible:false
 	}
-
-
-
-
 
 ]
