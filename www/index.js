@@ -13,6 +13,11 @@ $(document).ready(function() {
 		add($("#name").val());
 	});
 
+	$('#name').keypress( function ( e ) {
+		if(e.which == 13) {
+			add($("#name").val());
+		}
+	});
 });
 
 
