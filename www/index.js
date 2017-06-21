@@ -5,7 +5,6 @@ var rubysea_img;
 var yanxia_img;
 var azimsteppe_img;
 
-
 $(document).ready(function() {
 	init();
 
@@ -14,7 +13,6 @@ $(document).ready(function() {
 			type: 'GET',
 			url: 'share/'+$('#receive_id').val()
 		}).done(function(data) {
-			console.log(data);
 			merge(JSON.parse(data));
 		}).fail(function() {
 			alert('error');
@@ -22,7 +20,6 @@ $(document).ready(function() {
 	});
 
 	$('#submit').click(function() {
-	console.log(JSON.stringify(MonsterDataArray));
 		$.ajax({
 			type: 'POST',
 			url: 'share',
@@ -30,7 +27,6 @@ $(document).ready(function() {
 			data: JSON.stringify(MonsterDataArray)
 		}).done(function(data) {
 			$('#send_id').val(data);
-			console.log(data);
 		}).fail(function() {
 			alert('error');
 		});
@@ -71,7 +67,7 @@ function convertStr(str) {
 }
 
 function createAutocompleteList() {
-	var arr = [];
+	var arr = kanjiNameList;
 	MonsterDataArray.forEach(function(monster) {
 		arr.push([convertStr(monster.name), monster.name]);
 	});
