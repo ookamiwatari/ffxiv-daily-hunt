@@ -50,13 +50,11 @@ $(document).ready(function() {
 	$('#name').keypress( function ( e ) {
 		if(e.which == 13) {
 			add($("#name").val());
-			$("#name").val('');
 		}
 	});
 
 	$('#add').click(function() {
 		add($("#name").val());
-		$("#name").val('');
 	});
 });
 
@@ -122,11 +120,12 @@ function eorzeaToCanvas(pos, area) {
 
 function add(name) {
 	MonsterDataArray.forEach(function(monster) {
-		if(monster.name.match(new RegExp(name))) {
+		if(monster.name==name) {
 			monster.visible = true;
+			update();
+			$("#name").val('');
 		}
 	});
-	update();
 }
 
 
