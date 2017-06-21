@@ -247,6 +247,13 @@ var MonsterDataArray =
 	},
 
 	{
+		name: 'コンガマトー',
+		area: 'Peaks',
+		pos: {x: 17.5, y: 27.7},
+		visible:false
+	},
+
+	{
 		name: 'サイカブト',
 		area: 'Yanxia',
 		pos: {x: 27.5, y: 19.8},
@@ -292,6 +299,13 @@ var MonsterDataArray =
 		name: 'シマエイ',
 		area: 'RubySea',
 		pos: {x: 6.2, y: 29.4},
+		visible:false
+	},
+
+	{
+		name: 'ジャムメル',
+		area: 'Peaks',
+		pos: {x: 27.8, y: 28.0},
 		visible:false
 	},
 
@@ -436,6 +450,13 @@ var MonsterDataArray =
 	},
 
 	{
+		name: 'トゥルーグリフィン',
+		area: 'Peaks',
+		pos: {x: 25.3, y: 24.7},
+		visible:false
+	},
+
+	{
 		name: 'トビザメ',
 		area: 'RubySea',
 		pos: {x: 26.9, y: 30.4},
@@ -471,6 +492,20 @@ var MonsterDataArray =
 	},
 
 	{
+		name: 'ハイウィング・チャプリ',
+		area: 'Peaks',
+		pos: {x: 12.5, y: 33.6},
+		visible:false
+	},
+
+	{
+		name: 'ハイランド・エルカ',
+		area: 'Peaks',
+		pos: {x: 23.8, y: 35.2},
+		visible:false
+	},
+
+	{
 		name: 'ハイランド・ダラ',
 		area: 'Fringes',
 		pos: {x: 29.1, y: 29.3},
@@ -495,6 +530,13 @@ var MonsterDataArray =
 		name: 'ハルガイ',
 		area: 'AzimSteppe',
 		pos: {x: 17.5, y: 16.7},
+		visible:false
+	},
+
+	{
+		name: 'パンテーラ',
+		area: 'Peaks',
+		pos: {x: 11.0, y: 32.3},
 		visible:false
 	},
 
@@ -670,6 +712,13 @@ var MonsterDataArray =
 		name: 'ミノビ',
 		area: 'Yanxia',
 		pos: {x: 34.3, y: 19.6},
+		visible:false
+	},
+
+	{
+		name: 'ムードスード',
+		area: 'Peaks',
+		pos: {x: 14.6, y: 32.1},
 		visible:false
 	},
 
