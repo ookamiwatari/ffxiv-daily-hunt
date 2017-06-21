@@ -67,11 +67,10 @@ function convertStr(str) {
 }
 
 function createAutocompleteList() {
-	var arr = kanjiNameList;
+	var arr = $.extend(true, [], kanjiNameList);
 	MonsterDataArray.forEach(function(monster) {
 		arr.push([convertStr(monster.name), monster.name]);
 	});
-	console.log(arr);
 	return arr;
 }
 
