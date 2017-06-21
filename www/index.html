@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html>
 <head>
   <meta charset="UTF-8"> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script type="text/javascript" src="data.js"></script>
   <script type="text/javascript" src="index.js"></script>
   <link rel="stylesheet" type="text/css" href="index.css">
@@ -27,10 +29,29 @@
   <hr>
 
   <h2>情報入力</h2>
-  <input type="text" id="name">
-  <button id="add">追加</button>
-  <table id="MonsterVisibleList">
-  </table>
+
+  <p>
+    自分のid
+    <input type="text" id="send_id" disabled="disabled">
+    <button id="submit">送信</button>
+  </p>
+
+  <p>
+    相手のid
+    <input type="text" id="receive_id">
+    <button id="merge">マージ</button>
+  </p>
+
+  <p>
+    モンスター名
+    <input type="text" id="name">
+    <button id="add">追加</button>
+  </p>
+
+  <p>
+    <table id="MonsterVisibleList"></table>
+  </p>
+
   <hr>
   <p>Copyright (C) 2010 - 2017 SQUARE ENIX CO., LTD. All Rights Reserved.</p>
   <p>記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。</p>

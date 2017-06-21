@@ -9,16 +9,88 @@ var azimsteppe_img;
 $(document).ready(function() {
 	init();
 
-	$('#add').click(function(){
-		add($("#name").val());
+	$('#merge').click(function() {
+		$.ajax({
+			type: 'GET',
+			url: 'share/'+$('#receive_id').val()
+		}).done(function(data) {
+			console.log(data);
+			merge(JSON.parse(data));
+		}).fail(function() {
+			alert('error');
+		});
+	});
+
+	$('#submit').click(function() {
+	console.log(JSON.stringify(MonsterDataArray));
+		$.ajax({
+			type: 'POST',
+			url: 'share',
+			contentType: 'application/json',
+			data: JSON.stringify(MonsterDataArray)
+		}).done(function(data) {
+			$('#send_id').val(data);
+			console.log(data);
+		}).fail(function() {
+			alert('error');
+		});
+	});
+
+	$('#name').autocomplete({
+		source: function(request, response) {
+			var dataList = createAutocompleteList();
+			var re   = new RegExp('(' + request.term + ')');
+			var list = [];
+
+			$.each(dataList, function(i, values) {
+				if(values[0].match(re) || values[1].match(re)) {
+					list.push(values[1]);
+				}
+			});
+			response(list);
+		}
 	});
 
 	$('#name').keypress( function ( e ) {
 		if(e.which == 13) {
 			add($("#name").val());
+			$("#name").val('');
 		}
 	});
+
+	$('#add').click(function() {
+		add($("#name").val());
+		$("#name").val('');
+	});
 });
+
+function convertStr(str) {
+	return str.replace(/[ァ-ン]/g, function(s) {
+		return String.fromCharCode(s.charCodeAt(0) - 0x60);
+	});
+}
+
+function createAutocompleteList() {
+	var arr = [];
+	MonsterDataArray.forEach(function(monster) {
+		arr.push([convertStr(monster.name), monster.name]);
+	});
+	console.log(arr);
+	return arr;
+}
+
+function merge(mergeMonsterDataArray) {
+	mergeMonsterDataArray.forEach(function(mergeMonster) {
+		if(mergeMonster.visible) {
+			MonsterDataArray.forEach(function(monster) {
+				if(mergeMonster.name == monster.name) {
+					monster.visible = true;
+				}
+			});
+		}
+	});
+	update();
+}
 
 
 function update() {
@@ -48,7 +120,7 @@ function update() {
 
 
 function eorzeaToCanvas(pos, area) {
-	return {x: (pos.x-1)*10, y: (pos.y-1)*10};
+	return {x: (pos.x-1)*9.7560975609756097560975609756098, y: (pos.y-1)*9.7560975609756097560975609756098};
 
 }
 
